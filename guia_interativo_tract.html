@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Interativo: Sobrevivendo à Reforma Tributária - TRACT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --bg-main: #1B2028;
+            --bg-card: #242A35;
+            --border-color: #333C4A;
+            --accent-blue: #3B82F6;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-serif-brand { font-family: 'Lora', Georgia, serif; }
+        .font-logo { font-family: 'Playfair Display', Georgia, serif; }
+
+        /* Estilização dos Cards */
+        .gamma-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .gamma-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px -5px rgba(59, 130, 246, 0.15);
+            border-color: var(--accent-blue);
+        }
+
+        /* 1. Animações de Entrada (Scroll Reveal) */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 2. Animação Barras de Progresso B2B/B2C */
+        .progress-bar-fill {
+            width: 0%;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* FAQ Sanfona */
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+
+        /* Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: var(--bg-main); }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+    </style>
+</head>
+<body class="custom-scrollbar selection:bg-blue-500 selection:text-white">
+
+<div class="bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 text-white text-center py-2.5 px-4 text-xs md:text-sm font-semibold tracking-wide flex justify-center items-center gap-2 z-50 relative shadow-md">
+    <span class="animate-pulse">⚠️</span> Janeiro de 2026 iniciou a fase de testes do novo sistema de notas. Sua empresa está pronta?
+</div>
+
+<nav class="sticky top-0 z-40 bg-[#1B2028]/95 backdrop-blur-md border-b border-[#333C4A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+            
+            <a href="#hero" class="flex items-center gap-3 cursor-pointer group">
+                <img src="logo.png" alt="Logo TRACT" class="h-8 md:h-10 w-auto group-hover:scale-105 transition-transform drop-shadow-md object-contain">
+                <span class="text-slate-300 font-light text-[10px] sm:text-xs tracking-widest uppercase border-l border-slate-600 pl-2 sm:pl-3 ml-1 mt-1">Contabilidade</span>
+            </a>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="#iva" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">O Novo IVA</a>
+                <a href="#excecoes" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Setores Blindados</a>
+                <a href="#impactos" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Impactos Práticos</a>
+                <a href="#cronograma" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Cronograma</a>
+                <a href="#simples" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Simples Nacional</a>
+                
+                <!-- 4. CTA WhatsApp Direto -->
+                <a href="https://wa.me/5571985499959?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TRACT%20e%20gostaria%20de%20agendar%20meu%20Diagn%C3%B3stico%20Gratuito." target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all hover:-translate-y-0.5 shadow-[0_0_15px_rgba(59,130,246,0.3)] flex items-center gap-2">
+                    Diagnóstico Grátis
+                </a>
+            </div>
+
+            <!-- Botão Hamburger Mobile -->
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white focus:outline-none p-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#242A35] border-b border-[#333C4A] px-4 py-4 space-y-3 shadow-xl">
+        <a href="#iva" class="mobile-link block text-base font-medium text-slate-300 hover:text-white">O Novo IVA</a>
+        <a href="#excecoes" class="mobile-link block text-base font-medium text-slate-300 hover:text-white">Setores Blindados</a>
+        <a href="#impactos" class="mobile-link block text-base font-medium text-slate-300 hover:text-white">Impactos Práticos</a>
+        <a href="#cronograma" class="mobile-link block text-base font-medium text-slate-300 hover:text-white">Cronograma</a>
+        <a href="#simples" class="mobile-link block text-base font-medium text-slate-300 hover:text-white">Simples Nacional</a>
+        <a href="https://wa.me/5571985499959?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TRACT%20e%20gostaria%20de%20agendar%20meu%20Diagn%C3%B3stico%20Gratuito." target="_blank" class="block w-full text-center bg-blue-600 text-white px-5 py-3 rounded-lg text-sm font-bold mt-4">
+            Chamar no WhatsApp
+        </a>
+    </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
+
+    <section id="hero" class="py-12 md:py-20 text-center reveal-up">
+        <div class="inline-flex items-center justify-center p-3 sm:p-4 rounded-full bg-[#242A35] border border-[#333C4A] mb-8 shadow-xl">
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+            Sobrevivendo à <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Reforma Tributária</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-12 font-light px-4">
+            Traduzindo o "contabilês" para o dia a dia do seu negócio. Ajudamos você a proteger seu caixa na transição de 2026 a 2033.
+        </p>
+        
+        <div class="flex justify-center mb-16">
+            <a href="#iva" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-500 hover:scale-[1.02] transition-all shadow-[0_0_20px_rgba(59,130,246,0.4)] inline-flex items-center gap-2">
+                Entender o Novo IVA 
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+
+        <!-- 6. Depoimento / Prova Social -->
+        <div class="max-w-2xl mx-auto bg-gradient-to-r from-[#242A35]/50 to-[#1B2028] p-6 rounded-2xl border border-[#333C4A]/50 relative">
+            <div class="absolute -top-4 -left-2 text-4xl text-blue-500/30 font-serif">"</div>
+            <p class="text-sm md:text-base text-slate-300 italic text-center px-4">"A reforma não é só contabilidade, é sobrevivência de mercado. A TRACT não apura apenas minhas guias, eles constroem o plano de defesa da minha margem de lucro líquida."</p>
+        </div>
+    </section>
+
+    <section id="iva" class="py-20 border-t border-[#333C4A]/50 reveal-up">
+        <div class="mb-14 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">O Novo IVA Dual</h2>
+            <p class="text-slate-400 mt-4 text-lg">A antiga "sopa de letrinhas" resumida em 3 frentes principais (LC 214/2025).</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="p-6 gamma-card rounded-3xl border-l-4 border-l-blue-500">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-[#1B2028] text-blue-400 p-3 rounded-xl font-black text-lg border border-[#333C4A] shadow-inner">CBS</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-1">A Fome do Leão Federal</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">Substitui PIS e COFINS. Alíquota estimada em <strong class="text-blue-400">~8,08%</strong>. A vantagem é o Crédito Financeiro Amplo sobre despesas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 gamma-card rounded-3xl border-l-4 border-l-slate-400">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-[#1B2028] text-slate-300 p-3 rounded-xl font-black text-lg border border-[#333C4A] shadow-inner">IBS</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-1">A Fatia de Estados e Municípios</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">Substitui ICMS e ISS. Alíquota estimada em <strong class="text-slate-200">~18,5%</strong>. Focado no local de consumo (destino).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 gamma-card rounded-3xl border-l-4 border-l-red-500/80 bg-red-900/10">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-[#1B2028] text-red-400 p-3 rounded-xl font-black text-lg border border-red-900/30 shadow-inner">IS</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white mb-1">O Imposto do Pecado</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">Imposto Seletivo federal. O alerta crítico: <strong class="text-red-400 underline decoration-red-500/50">NÃO gera crédito</strong> para o comprador.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center gamma-card p-6 rounded-3xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl"></div>
+                <h3 class="text-lg font-serif-brand text-white text-center mb-6 relative z-10">Composição Estimada do IVA</h3>
+                <div class="relative w-full max-w-[400px] h-[300px] z-10">
+                    <canvas id="ivaChart"></canvas>
+                </div>
+                <p class="mt-4 text-xs text-slate-500 italic text-center relative z-10">Ref: LC 214/2025.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="excecoes" class="py-20 border-t border-[#333C4A]/50 reveal-up">
+        <div class="mb-14 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Setores Blindados</h2>
+            <p class="text-slate-400 mt-4 text-lg">As exceções à regra da alíquota cheia (Reduções Específicas).</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-8 gamma-card rounded-3xl border-t-4 border-emerald-500 flex flex-col">
+                <div class="text-emerald-400 text-4xl font-black mb-4">0%</div>
+                <h4 class="text-xl font-bold mb-3 text-white">Alíquota Zero</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Itens da Cesta Básica Nacional de Alimentos, medicamentos classificados como essenciais, e insumos vitais para o agronegócio.</p>
+            </div>
+            
+            <div class="p-8 gamma-card rounded-3xl border-t-4 border-blue-400 flex flex-col">
+                <div class="text-blue-400 text-4xl font-black mb-4">-60%</div>
+                <h4 class="text-xl font-bold mb-3 text-white">Redução Forte</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Serviços de saúde humana (Hospitais, Clínicas), serviços de educação (Colégios) e transporte coletivo de passageiros.</p>
+            </div>
+
+            <div class="p-8 gamma-card rounded-3xl border-t-4 border-slate-400 flex flex-col">
+                <div class="text-slate-400 text-4xl font-black mb-4">-30%</div>
+                <h4 class="text-xl font-bold mb-3 text-white">Profissionais Liberais</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Profissões intelectuais sob fiscalização de conselhos (Advogados, Engenheiros, Contadores, Médicos em atuação individual).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="impactos" class="py-20 border-t border-[#333C4A]/50 reveal-up">
+        <div class="mb-14 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">As 5 Grandes Mudanças</h2>
+            <p class="text-slate-400 mt-4 text-lg">Onde a reforma vai mexer no seu fluxo de caixa.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-8 gamma-card rounded-3xl flex flex-col h-full reveal-up">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-xl mb-6 border border-blue-500/20 text-blue-400 font-bold">+</div>
+                <h4 class="text-xl font-bold mb-3 text-white">1. Não Cumulatividade</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Aquisições de insumos, energia e aluguel geram crédito financeiro amplo, mudando sua formação de preço.</p>
+            </div>
+            
+            <div class="p-8 gamma-card rounded-3xl border-blue-500 relative overflow-hidden group flex flex-col h-full reveal-up" style="transition-delay: 100ms;">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-all"></div>
+                <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg text-white relative z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"></path></svg>
+                </div>
+                <h4 class="text-xl font-bold mb-3 text-white relative z-10">2. Split Payment</h4>
+                <p class="text-slate-300 text-sm leading-relaxed relative z-10">A tesoura do governo. O banco retém o imposto na hora que seu cliente paga. O tributo não "dorme" mais no seu caixa.</p>
+            </div>
+
+            <div class="p-8 gamma-card rounded-3xl flex flex-col h-full reveal-up" style="transition-delay: 200ms;">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-xl mb-6 border border-blue-500/20 text-blue-400">📍</div>
+                <h4 class="text-xl font-bold mb-3 text-white">3. Princípio do Destino</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">O imposto é devido no local do consumidor final. Manter filiais só por causa de CEP barato perdeu o sentido.</p>
+            </div>
+
+            <div class="p-8 gamma-card rounded-3xl flex flex-col h-full reveal-up" style="transition-delay: 300ms;">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-xl mb-6 border border-blue-500/20 text-blue-400">🏳️</div>
+                <h4 class="text-xl font-bold mb-3 text-white">4. Fim da Guerra Fiscal</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Proibição de estados concederem benefícios unilaterais. Competição focada em eficiência logística e qualidade.</p>
+            </div>
+
+            <div class="p-8 gamma-card rounded-3xl flex flex-col h-full reveal-up" style="transition-delay: 400ms;">
+                <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-xl mb-6 border border-blue-500/20 text-blue-400">⏳</div>
+                <h4 class="text-xl font-bold mb-3 text-white">5. Ressarcimento Ágil</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">Prazo legal máximo de <strong>60 dias</strong> (LC 214) para o Estado devolver saldos credores de caixa acumulados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cronograma" class="py-20 border-t border-[#333C4A]/50 reveal-up">
+        <div class="mb-14 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">O Cronograma</h2>
+            <p class="text-slate-400 mt-4 text-lg">A transição operacional rumo a 2033.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="relative border-l-2 border-blue-900/50 ml-4 md:ml-0 md:pl-0 space-y-12">
+                
+                <!-- 2026 -->
+                <div class="relative pl-8 md:pl-12 reveal-up">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#1B2028] shadow-[0_0_10px_rgba(59,130,246,0.8)]"></div>
+                    <div class="text-blue-500 font-black text-2xl mb-1">2026</div>
+                    <h3 class="text-xl font-bold text-white mb-2">A Fase de Testes</h3>
+                    <p class="text-slate-400 text-sm md:text-base leading-relaxed gamma-card p-5 rounded-2xl">
+                        Cobrança experimental de 0,9% (CBS) e 0,1% (IBS). O valor é 100% compensável com PIS/COFINS (Zero aumento de carga). Foco em adequar a emissão de notas (NF-e) e testar a tecnologia do Split Payment.
+                    </p>
+                </div>
+
+                <!-- 2027 -->
+                <div class="relative pl-8 md:pl-12 reveal-up">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-400 border-4 border-[#1B2028]"></div>
+                    <div class="text-slate-300 font-black text-2xl mb-1">2027</div>
+                    <h3 class="text-xl font-bold text-white mb-2">O Big Bang Federal</h3>
+                    <p class="text-slate-400 text-sm md:text-base leading-relaxed bg-[#242A35] border border-[#333C4A] p-5 rounded-2xl">
+                        Morte definitiva do PIS e da COFINS. A CBS assume alíquota cheia (~8,08%) e o Imposto Seletivo entra em vigor. O Split Payment começa a operar forte no mercado B2B. O IPI é reduzido a zero.
+                    </p>
+                </div>
+
+                <!-- 2029 -->
+                <div class="relative pl-8 md:pl-12 reveal-up">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-500 border-4 border-[#1B2028]"></div>
+                    <div class="text-slate-400 font-black text-2xl mb-1">2029</div>
+                    <h3 class="text-xl font-bold text-white mb-2">O Despertar do IBS</h3>
+                    <p class="text-slate-500 text-sm md:text-base leading-relaxed bg-[#242A35]/50 border border-[#333C4A]/50 p-5 rounded-2xl">
+                        Início da transição estadual. O IBS entra cobrando 10% da sua proporção, reduzindo ICMS e ISS no mesmo volume. A guerra fiscal começa a perder seu efeito.
+                    </p>
+                </div>
+
+                <!-- 2033 -->
+                <div class="relative pl-8 md:pl-12 reveal-up">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-600 border-4 border-[#1B2028]"></div>
+                    <div class="text-slate-500 font-black text-2xl mb-1">2033</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Sistema Pleno</h3>
+                    <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                        ICMS e ISS são enterrados oficialmente. O IVA Dual assume 100% das relações de consumo.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="simples" class="py-20 border-t border-[#333C4A]/50 reveal-up">
+        <div class="mb-14 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">O Simples Nacional</h2>
+            <p class="text-slate-400 mt-4 text-lg">A armadilha do B2B e o novo Regime Híbrido.</p>
+        </div>
+
+        <div class="bg-[#1E242D] rounded-[2rem] p-8 md:p-12 border border-[#333C4A] shadow-2xl relative overflow-hidden mb-12">
+            <div class="absolute -right-32 -top-32 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                <div class="lg:w-1/2 space-y-6">
+                    <div class="inline-flex items-center gap-3 px-3 py-1.5 bg-red-500/10 text-red-400 rounded-lg text-[10px] font-bold uppercase tracking-widest border border-red-500/20">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                        A Armadilha
+                    </div>
+                    <h3 class="text-2xl font-serif-brand font-bold text-white">Bloqueio de Créditos B2B</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm md:text-base">
+                        Manter todos os tributos na guia DAS limita repasse de créditos. Seus clientes PJ aproveitarão só o teto mínimo pago na guia (~1%). Sua mercadoria fica "cara" comparada a empresas fora do Simples.
+                    </p>
+                    
+                    <div class="p-5 rounded-xl bg-[#242A35] border border-blue-900/50 shadow-inner">
+                        <h4 class="font-bold text-blue-400 mb-2 text-sm">O Salva-Vidas: Regime Híbrido</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">Mantenha o Simples para IR/CSLL/INSS. Recolha a CBS/IBS <strong>fora do DAS</strong>. Isso destaca a alíquota cheia na NF e repassa crédito integral, salvando seus contratos corporativos.</p>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 w-full flex flex-col justify-center">
+                    <div class="gamma-card p-6 md:p-8 rounded-2xl w-full" id="b2b-chart-container">
+                        <h4 class="font-bold text-white mb-6 text-center text-sm md:text-base">Crédito Repassado ao seu Cliente B2B</h4>
+                        
+                        <div class="space-y-8">
+                            <!-- 2. Barra Animada B2C -->
+                            <div>
+                                <div class="flex justify-between text-xs md:text-sm mb-2">
+                                    <span class="text-slate-300">Via DAS Unificado</span>
+                                    <span class="font-bold text-red-400">~1%</span>
+                                </div>
+                                <div class="w-full bg-[#1B2028] h-3 rounded-full overflow-hidden border border-[#333C4A]">
+                                    <div class="bg-red-500 h-full progress-bar-fill rounded-full" data-width="8%"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- 2. Barra Animada B2B -->
+                            <div>
+                                <div class="flex justify-between text-xs md:text-sm mb-2">
+                                    <span class="text-slate-300">Via Regime Híbrido</span>
+                                    <span class="font-bold text-blue-400">Até 26,5%</span>
+                                </div>
+                                <div class="w-full bg-[#1B2028] h-3 rounded-full overflow-hidden border border-[#333C4A]">
+                                    <div class="bg-blue-500 h-full progress-bar-fill rounded-full relative" data-width="100%">
+                                        <div class="absolute inset-0 bg-gradient-to-r from-transparent to-white/20"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Simulador de Impacto (Isca de Leads) -->
+        <div class="max-w-2xl mx-auto bg-[#242A35] rounded-2xl border border-[#333C4A] p-6 md:p-8 shadow-xl reveal-up">
+            <h3 class="text-lg font-bold text-white mb-2 text-center">Simulador de Risco B2B</h3>
+            <p class="text-xs text-slate-400 text-center mb-6">Descubra se sua margem está em perigo.</p>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Qual seu regime atual?</label>
+                    <select id="calc-regime" class="w-full bg-[#1B2028] border border-[#333C4A] text-slate-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option value="simples">Simples Nacional</option>
+                        <option value="presumido">Lucro Presumido</option>
+                        <option value="real">Lucro Real</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-300 mb-1">Quem é seu cliente principal?</label>
+                    <select id="calc-cliente" class="w-full bg-[#1B2028] border border-[#333C4A] text-slate-200 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option value="b2c">Pessoas Físicas (B2C - CPF)</option>
+                        <option value="b2b">Empresas (B2B - CNPJ)</option>
+                    </select>
+                </div>
+                
+                <button onclick="calcularImpacto()" class="w-full bg-slate-700 hover:bg-blue-600 text-white font-bold py-3 rounded-lg text-sm transition-colors mt-2">
+                    Analisar Meu Risco
+                </button>
+            </div>
+
+            <!-- Resultado -->
+            <div id="calc-result" class="hidden mt-6 p-4 rounded-lg border text-sm"></div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 border-t border-[#333C4A]/50 reveal-up max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-white text-center mb-8">Dúvidas Frequentes</h2>
+        <div class="space-y-4">
+            <details class="group bg-[#242A35] border border-[#333C4A] rounded-xl overflow-hidden">
+                <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-slate-200 hover:bg-[#2c3340] transition-colors">
+                    O Simples Nacional vai acabar?
+                    <span class="transition group-open:rotate-180">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </summary>
+                <div class="p-5 pt-0 text-sm text-slate-400 leading-relaxed border-t border-[#333C4A]">
+                    Não. A Constituição preservou o Simples Nacional. O que muda é a sua atratividade para vendas a outras empresas (B2B), pois a emissão em guia única (DAS) não repassará o crédito integral para o seu cliente PJ, podendo encarecer seu produto.
+                </div>
+            </details>
+
+            <details class="group bg-[#242A35] border border-[#333C4A] rounded-xl overflow-hidden">
+                <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-slate-200 hover:bg-[#2c3340] transition-colors">
+                    Vou pagar mais impostos?
+                    <span class="transition group-open:rotate-180">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </summary>
+                <div class="p-5 pt-0 text-sm text-slate-400 leading-relaxed border-t border-[#333C4A]">
+                    Depende do seu setor e da sua cadeia de suprimentos. Embora as alíquotas nominais (IBS+CBS) pareçam altas (26,5%), a não cumulatividade plena permite abater créditos sobre aluguel, energia e insumos. O planejamento tributário definirá se sua carga efetiva sobe ou desce.
+                </div>
+            </details>
+
+            <details class="group bg-[#242A35] border border-[#333C4A] rounded-xl overflow-hidden">
+                <summary class="flex justify-between items-center font-medium cursor-pointer p-5 text-slate-200 hover:bg-[#2c3340] transition-colors">
+                    O que é o Split Payment?
+                    <span class="transition group-open:rotate-180">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </summary>
+                <div class="p-5 pt-0 text-sm text-slate-400 leading-relaxed border-t border-[#333C4A]">
+                    É um sistema tecnológico operado pelos bancos. No momento em que seu cliente paga (via Pix, cartão, boleto), o sistema separa automaticamente o valor do IBS e da CBS e envia direto para o governo. Só cai na sua conta o valor líquido, alterando a gestão do seu fluxo de caixa.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="contato" class="py-20 border-t border-[#333C4A]/50 reveal-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-serif-brand font-bold text-white mb-6">Nós estamos prontos.<br/>E a sua empresa?</h2>
+            <p class="text-lg text-slate-400 mb-10">
+                Agende seu Diagnóstico Tributário via WhatsApp e simule o impacto real da reforma no seu CNPJ.
+            </p>
+            
+            <div class="mb-10 flex flex-col items-center">
+                <div class="p-4 bg-white rounded-2xl shadow-[0_0_30px_rgba(59,130,246,0.15)] border-4 border-[#333C4A] hover:border-blue-500 transition-colors cursor-pointer group">
+                    <!-- 4. QR Code Apontando para o WhatsApp -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/5571985499959?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20tribut%C3%A1rio.&color=0A2540" 
+                         alt="QR Code WhatsApp TRACT" 
+                         class="w-32 h-32 md:w-40 md:h-40 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-xs md:text-sm text-slate-400 mt-4 font-medium uppercase tracking-widest">
+                    Escaneie para chamar no WhatsApp
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <!-- 4. Botão Direto para o WhatsApp -->
+                <a href="https://wa.me/5571985499959?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TRACT%20e%20gostaria%20de%20agendar%20meu%20Diagn%C3%B3stico%20Gratuito." target="_blank" class="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-500 transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.3)] flex justify-center items-center gap-2">
+                    Falar com Consultor Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-[#13161C] border-t border-[#333C4A] py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center md:items-start text-center md:text-left">
+            
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-3 mb-6 opacity-70">
+                    <img src="logo.png" alt="Logo TRACT" class="h-8 md:h-10 w-auto object-contain">
+                    <span class="text-slate-300 font-light text-xs tracking-widest uppercase border-l border-slate-600 pl-3 mt-1">Contabilidade</span>
+                </div>
+                <p class="text-sm text-slate-500 max-w-xs">Transformando complexidade burocrática em vantagem competitiva.</p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-widest text-slate-400">Contato Direto</h4>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                        <span class="text-left">Rua Alceu Amoroso Lima, 786 - Sala 520.<br>Ed. Tancredo Neves. Salvador/BA</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <a href="https://wa.me/5571985499959" class="hover:text-green-400">+55 71 98549-9959 (WhatsApp)</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <a href="mailto:contato@tract.com.br" class="hover:text-white">contato@tract.com.br</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end md:text-right">
+                <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-widest text-slate-400">Navegação</h4>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="#hero" class="hover:text-blue-400 transition-colors">Início</a></li>
+                    <li><a href="#iva" class="hover:text-blue-400 transition-colors">O Novo IVA</a></li>
+                    <li><a href="#simples" class="hover:text-blue-400 transition-colors">Simples Nacional</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-[#333C4A] mt-12 pt-8 text-center">
+            <p class="text-xs text-slate-600">Alinhamento Técnico: EC 132/2023, LC 214 e LC 227. © 2026 TRACT Contabilidade.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/5571985499959?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20a%20Reforma%20Tribut%C3%A1ria." target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-transform z-50 group">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="absolute -top-10 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Chamar no WhatsApp</span>
+</a>
+
+<script>
+    // 3. Lógica do Menu Mobile
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+        });
+    });
+
+    // 1. Scroll Reveal Logic & 2. Animação Barras B2B
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Anima seções e cards
+                entry.target.classList.add('active');
+                
+                // Anima Barras de Progresso B2B/B2C se for o container delas
+                if(entry.target.id === 'b2b-chart-container') {
+                    const bars = entry.target.querySelectorAll('.progress-bar-fill');
+                    bars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                }
+                
+                // Desativa a observação após animar
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-up, #b2b-chart-container').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Gráfico de Pizza (O Novo IVA)
+    window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.getElementById('ivaChart');
+        if(canvas) {
+            const ctx = canvas.getContext('2d');
+            
+            const centerTextPlugin = {
+                id: 'centerText',
+                beforeDraw: function(chart) {
+                    var width = chart.width, height = chart.height, ctx = chart.ctx;
+                    ctx.restore();
+                    var fontSize = (height / 110).toFixed(2);
+                    ctx.font = "bold " + fontSize + "em Inter";
+                    ctx.textBaseline = "middle";
+                    ctx.fillStyle = "#F8FAFC";
+                    var text = "~26,5%", textX = Math.round((width - ctx.measureText(text).width) / 2), textY = height / 2.1;
+                    ctx.fillText(text, textX, textY);
+                    ctx.font = "normal " + (fontSize*0.35).toFixed(2) + "em Inter";
+                    ctx.fillStyle = "#94A3B8";
+                    var text2 = "IVA Teto";
+                    var text2X = Math.round((width - ctx.measureText(text2).width) / 2);
+                    ctx.fillText(text2, text2X, textY + 30);
+                    ctx.save();
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['IBS (Estados)', 'CBS (Federal)', 'IS (Seletivo)'],
+                    datasets: [{
+                        data: [18.5, 8.08, 1.5],
+                        backgroundColor: ['#94A3B8', '#3B82F6', '#EF4444'], 
+                        borderColor: '#242A35',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#cbd5e1', usePointStyle: true, padding: 20, font: { family: 'Inter' } }
+                        }
+                    },
+                    cutout: '75%'
+                },
+                plugins: [centerTextPlugin]
+            });
+        }
+    });
+
+    // 8. Calculadora Básica de Impacto (Lead Magnet)
+    function calcularImpacto() {
+        const regime = document.getElementById('calc-regime').value;
+        const cliente = document.getElementById('calc-cliente').value;
+        const resultDiv = document.getElementById('calc-result');
+        
+        resultDiv.classList.remove('hidden', 'bg-red-900/30', 'border-red-500/50', 'text-red-400', 'bg-green-900/30', 'border-green-500/50', 'text-green-400', 'bg-blue-900/30', 'border-blue-500/50', 'text-blue-400');
+        
+        if (regime === 'simples' && cliente === 'b2b') {
+            resultDiv.classList.add('bg-red-900/30', 'border-red-500/50', 'text-red-400');
+            resultDiv.innerHTML = `<strong>⚠️ ALERTA VERMELHO:</strong> Você está no pior cenário possível. Mantendo o DAS unificado, você repassará quase zero crédito ao seu cliente CNPJ, correndo alto risco de perder contratos. <br><br> <a href="https://wa.me/5571985499959?text=Quero%20falar%20sobre%20o%20Regime%20H%C3%ADbrido" target="_blank" class="text-white underline mt-2 inline-block">Fale com a TRACT sobre o Regime Híbrido agora.</a>`;
+        } else if (regime === 'simples' && cliente === 'b2c') {
+            resultDiv.classList.add('bg-green-900/30', 'border-green-500/50', 'text-green-400');
+            resultDiv.innerHTML = `<strong>✅ Cenario Estável:</strong> Como você vende para CPF (que não toma crédito), manter-se no Simples Nacional e no DAS unificado provavelmente continuará sendo a melhor e mais barata opção para sua empresa.`;
+        } else {
+            resultDiv.classList.add('bg-blue-900/30', 'border-blue-500/50', 'text-blue-400');
+            resultDiv.innerHTML = `<strong>🔍 Análise Necessária:</strong> Empresas de Lucro Presumido/Real sofrerão impacto direto do Split Payment e da nova precificação via créditos da CBS/IBS. É vital mapear seus insumos. <a href="https://wa.me/5571985499959" target="_blank" class="text-white underline ml-1">Agende seu diagnóstico.</a>`;
+        }
+    }
+</script>
+
+</body>
+</html>
