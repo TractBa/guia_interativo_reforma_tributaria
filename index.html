@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reforma Tributária na Advocacia | TRACT Contabilidade</title>
+  
+  <!-- Meta Tags Open Graph (OG) para Compartilhamento (WhatsApp, LinkedIn, Facebook, etc) -->
+  <meta property="og:title" content="Reforma Tributária na Advocacia | TRACT Contabilidade" />
+  <meta property="og:description" content="A EC 132/2023 alterou radicalmente a tributação na advocacia. Entenda o IVA Dual, Split Payment e saiba como proteger seus honorários." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seusite.com.br" /> <!-- Substitua pela URL oficial quando for publicar -->
+  <meta property="og:image" content="icone.png" />
+  <meta property="og:image:alt" content="Logo TRACT Contabilidade" />
+  <meta property="og:site_name" content="TRACT Contabilidade" />
+
+  <!-- Twitter Card Data -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reforma Tributária na Advocacia | TRACT Contabilidade" />
+  <meta name="twitter:description" content="A EC 132/2023 alterou radicalmente a tributação na advocacia. Entenda o IVA Dual, Split Payment e saiba como proteger seus honorários." />
+  <meta name="twitter:image" content="icone.png" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      background-color: #202733;
+      color: #e2e8f0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    .glass-card {
+      background-color: rgba(22, 29, 40, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(196, 164, 108, 0.25);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    .glass-card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .glass-card-hover:hover {
+      border-color: rgba(196, 164, 108, 0.5);
+      box-shadow: 0 25px 50px -12px rgba(196, 164, 108, 0.15);
+    }
+
+    .primary-btn {
+      background-color: #c4a46c;
+      color: #202733;
+      font-weight: 700;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .primary-btn:hover {
+      background-color: #d5b57d;
+      box-shadow: 0 10px 25px -5px rgba(196, 164, 108, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .glass-btn {
+      background-color: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(196, 164, 108, 0.35);
+      color: #e2e8f0;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .glass-btn:hover {
+      background-color: rgba(196, 164, 108, 0.12);
+      border-color: #c4a46c;
+      color: #ffffff;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #202733;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #c4a46c;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#202733] text-[#e2e8f0]">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-[#202733]/90 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+        <img src="marca.png" alt="TRACT Contabilidade" class="h-7 sm:h-8 md:h-10 w-auto object-contain" onError="this.src='marca.png'" />
+        <span class="hidden min-[360px]:inline text-[9px] sm:text-[10px] md:text-xs font-sans font-semibold text-[#c4a46c] tracking-[0.2em] sm:tracking-[0.25em] uppercase">
+          CONTABILIDADE
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold">
+        <a href="#capitulos" class="text-slate-300 hover:text-[#c4a46c] transition-colors">Capítulos</a>
+        <a href="#tax-simulator" class="text-slate-300 hover:text-[#c4a46c] transition-colors">Simulador</a>
+      </nav>
+
+      <button onclick="openModal('Diagnóstico do Topo')" class="primary-btn py-2 px-2.5 sm:py-2.5 sm:px-4 md:px-5 rounded-sm text-[11px] sm:text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 sm:gap-2 cursor-pointer shadow-lg shrink-0">
+        <i data-lucide="calendar" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#202733] shrink-0"></i>
+        <span>Agendar<span class="hidden min-[400px]:inline"> Diagnóstico</span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 space-y-12">
+
+    <!-- HERO SECTION -->
+    <section class="w-full glass-card rounded-2xl p-6 md:p-12 relative overflow-hidden border border-slate-800">
+      <div class="absolute -right-20 -top-20 w-96 h-96 bg-[#c4a46c]/10 rounded-full filter blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        <div class="lg:col-span-8 space-y-6">
+          <div>
+            <span class="text-[#c4a46c] text-xs uppercase tracking-[0.3em] font-bold flex items-center gap-2.5">
+              <img src="marca.png" alt="TRACT" class="h-6 w-auto object-contain" onError="this.src='marca.png'" />
+              <span>Contabilidade</span>
+            </span>
+            <div class="h-px w-16 bg-[#c4a46c] mt-2.5"></div>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight leading-tight" style="font-family: 'Georgia', serif;">
+            Guia Prático da <br class="hidden sm:inline" />
+            <span class="text-[#c4a46c] italic">Reforma Tributária</span> na Advocacia
+          </h1>
+
+          <p class="text-slate-300 text-sm md:text-base leading-relaxed max-w-2xl">
+            A EC 132/2023 alterou radicalmente a tributação das sociedades de advogados e profissionais autônomos. Entenda os impactos do IVA Dual (CBS + IBS), o fim do imposto no CPF, o efeito do Split Payment e como proteger seus honorários.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#capitulo-leitura" class="primary-btn py-3.5 px-6 rounded-sm text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-[#0a0c10]"></i>
+              <span>Iniciar Leitura do Guia</span>
+            </a>
+
+            <a href="#tax-simulator" class="glass-btn py-3.5 px-6 rounded-sm text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="calculator" class="w-4 h-4 text-[#c4a46c]"></i>
+              <span>Ir para o Simulador</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 bg-slate-900/90 rounded-xl p-6 border border-slate-800 space-y-4">
+          <div class="flex items-center gap-3 pb-4 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-sm bg-slate-800 border border-slate-700 p-1 flex items-center justify-center shrink-0">
+              <img src="marca.png" alt="TRACT" class="w-full h-full object-contain" onError="this.src='marca.png'" />
+            </div>
+            <div>
+              <span class="text-xs font-bold text-white block">Suporte Especializado TRACT</span>
+              <span class="text-[10px] text-slate-400">Contabilidade para Sociedades de Advogados</span>
+            </div>
+          </div>
+
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c4a46c]"></i> <span>Análise comparativa CPF x SUA x Simples</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c4a46c]"></i> <span>Desconto OAB (-30% alíquota IVA)</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c4a46c]"></i> <span>Adequação para Split Payment</span></li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#c4a46c]"></i> <span>Planejamento das COSITs de Sucumbência</span></li>
+          </ul>
+
+          <button onclick="openModal('Hero Quick Consult')" class="w-full glass-btn py-3 rounded-sm text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 mt-2">
+            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+            <span>Falar com um Especialista</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAPTER SELECTOR GRID -->
+    <section id="capitulos" class="space-y-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold text-[#c4a46c] uppercase tracking-widest block mb-1">Estrutura do Guia</span>
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-white" style="font-family: 'Georgia', serif;">
+            Navegue pelos 8 Capítulos Estratégicos
+          </h2>
+        </div>
+        <p class="text-xs text-slate-400 max-w-md">
+          Clique no capítulo desejado para carregar o conteúdo detalhado, gráficos de margem, quadros normativos e orientações práticas.
+        </p>
+      </div>
+
+      <div id="chapter-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+    </section>
+
+    <!-- CHAPTER VIEWER CONTAINER -->
+    <section id="capitulo-leitura" class="w-full glass-card rounded-2xl p-6 md:p-10 border border-slate-800 relative overflow-hidden">
+      <!-- Chapter Content Rendered Dynamically -->
+      <div id="chapter-content-area"></div>
+    </section>
+
+    <!-- TAX SIMULATOR SECTION -->
+    <section id="tax-simulator" class="w-full glass-card rounded-2xl p-6 md:p-8 border border-slate-800 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-[#c4a46c]/5 rounded-full filter blur-3xl pointer-events-none"></div>
+
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 pb-6 border-b border-slate-800">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-[#c4a46c]/15 text-[#c4a46c] text-xs font-semibold tracking-widest uppercase mb-2 border border-[#c4a46c]/30">
+            <i data-lucide="calculator" class="w-3.5 h-3.5 text-[#c4a46c]"></i> Simulador de Margem e Tributos
+          </span>
+          <h2 class="text-2xl md:text-3xl font-serif font-light text-white" style="font-family: 'Georgia', serif;">
+            Simule o Impacto da Reforma no <span class="font-bold italic text-[#c4a46c]">Seu Bolso</span>
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-1">
+            Compare quanto você paga hoje no CPF ou CNPJ versus a Sociedade Unipessoal (SUA) com o desconto da OAB.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Controls Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex justify-between">
+              <span>Faturamento Mensal (Honorários Brutos)</span>
+              <span id="sim-billing-label" class="text-[#c4a46c] font-mono text-sm font-bold">R$ 18.000</span>
+            </label>
+            <input
+              id="sim-billing-input"
+              type="range"
+              min="3000"
+              max="150000"
+              step="1000"
+              value="18000"
+              oninput="updateSimulator()"
+              class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#c4a46c]"
+            />
+            <div class="flex justify-between text-[10px] text-slate-500 mt-1 font-mono">
+              <span>R$ 3.000</span>
+              <span>R$ 75.000</span>
+              <span>R$ 150.000+</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+              Regime Tributário Atual
+            </label>
+            <div class="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                id="btn-regime-cpf"
+                onclick="setRegime('cpf')"
+                class="py-2 px-2 text-[11px] font-semibold rounded-sm border transition-all cursor-pointer bg-[#c4a46c] border-[#c4a46c] text-[#0a0c10] font-bold shadow-lg"
+              >
+                Pessoa Física (CPF)
+              </button>
+              <button
+                type="button"
+                id="btn-regime-sua"
+                onclick="setRegime('sua_simples')"
+                class="py-2 px-2 text-[11px] font-semibold rounded-sm border transition-all cursor-pointer bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200"
+              >
+                CNPJ / SUA (Simples Padrão)
+              </button>
+              <button
+                type="button"
+                id="btn-regime-sua-hibrido"
+                onclick="setRegime('sua_hibrido')"
+                class="py-2 px-2 text-[11px] font-semibold rounded-sm border transition-all cursor-pointer bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200"
+              >
+                CNPJ / SUA (Simples Híbrido)
+              </button>
+              <button
+                type="button"
+                id="btn-regime-presumido"
+                onclick="setRegime('presumido')"
+                class="py-2 px-2 text-[11px] font-semibold rounded-sm border transition-all cursor-pointer bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200"
+              >
+                Lucro Presumido
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex justify-between">
+              <span>Perfil de Clientes (% B2B - Empresas)</span>
+              <span id="sim-b2b-label" class="text-[#c4a46c] font-mono text-xs font-bold">60% B2B</span>
+            </label>
+            <input
+              id="sim-b2b-input"
+              type="range"
+              min="0"
+              max="100"
+              step="5"
+              value="60"
+              oninput="updateSimulator()"
+              class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-[#c4a46c]"
+            />
+            <div class="mt-2 p-3 bg-slate-900 border border-slate-800 rounded-sm space-y-1 text-[11px] text-slate-300">
+              <div class="flex justify-between font-semibold">
+                <span>Crédito Fiscal Gerado p/ Clientes B2B:</span>
+                <span id="sim-b2b-credit-val" class="text-emerald-400 font-mono">R$ 0/mês</span>
+              </div>
+              <p id="sim-b2b-tip" class="text-[10px] text-slate-400 leading-snug">
+                💡 Com 60% de clientes PJ, seus clientes empresas abatem crédito do IVA.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Column -->
+        <div class="lg:col-span-7 bg-slate-900/90 rounded-sm p-6 border border-slate-800 flex flex-col justify-between space-y-6">
+          <div>
+            <h3 class="text-xs font-bold text-[#c4a46c] uppercase tracking-widest mb-4">
+              Comparativo de Carga Tributária Estimada
+            </h3>
+
+            <div class="space-y-3">
+              <!-- CPF -->
+              <div class="p-3 rounded-sm bg-red-950/20 border border-red-500/20 flex justify-between items-center">
+                <div>
+                  <span class="text-xs font-semibold text-red-300 block">Advogado no CPF (Sem CNPJ)</span>
+                  <span class="text-[10px] text-red-400/80">IRPF (27,5%) + INSS (20%) + IVA (~18,55%)</span>
+                </div>
+                <div class="text-right">
+                  <span id="sim-cpf-monthly" class="text-sm font-bold text-red-400 block font-mono">R$ 0 /mês</span>
+                  <span id="sim-cpf-rate" class="text-[10px] font-mono text-red-300">~0% do bruto</span>
+                </div>
+              </div>
+
+              <!-- SUA Simples Padrão -->
+              <div id="card-sua-padrao" class="p-3 rounded-sm bg-[#c4a46c]/10 border border-[#c4a46c]/40 flex justify-between items-center relative overflow-hidden transition-all">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#c4a46c]"></div>
+                <div>
+                  <span class="text-xs font-bold text-[#c4a46c] block flex items-center gap-1.5 uppercase tracking-wider">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#c4a46c]"></i> CNPJ / SUA - Simples Padrão (DAS)
+                  </span>
+                  <span class="text-[10px] text-slate-400">
+                    Menor imposto direto (~4,5% a 12,5%) | Crédito B2B reduzido (~2,1%)
+                  </span>
+                </div>
+                <div class="text-right">
+                  <span id="sim-sua-monthly" class="text-base font-bold text-[#c4a46c] block font-mono">R$ 0 /mês</span>
+                  <span id="sim-sua-rate" class="text-[10px] font-mono text-[#c4a46c]">~0% do bruto</span>
+                </div>
+              </div>
+
+              <!-- SUA Simples Híbrido -->
+              <div id="card-sua-hibrido" class="p-3 rounded-sm bg-slate-900 border border-slate-800 flex justify-between items-center transition-all">
+                <div>
+                  <span class="text-xs font-semibold text-amber-300 block flex items-center gap-1.5">
+                    CNPJ / SUA - Simples Híbrido
+                  </span>
+                  <span class="text-[10px] text-amber-200/80">IBS/CBS por fora (18,55%) | Crédito B2B CHEIO para clientes PJ</span>
+                </div>
+                <div class="text-right">
+                  <span id="sim-sua-hibrido-monthly" class="text-sm font-bold text-amber-300 block font-mono">R$ 0 /mês</span>
+                  <span id="sim-sua-hibrido-rate" class="text-[10px] font-mono text-amber-400">~21.0% do bruto</span>
+                </div>
+              </div>
+
+              <!-- Lucro Presumido -->
+              <div class="p-3 rounded-sm bg-slate-900 border border-slate-800 flex justify-between items-center">
+                <div>
+                  <span class="text-xs font-semibold text-slate-300 block">Lucro Presumido Otimizado</span>
+                  <span class="text-[10px] text-slate-400">Gera crédito total CBS/IBS para clientes B2B</span>
+                </div>
+                <div class="text-right">
+                  <span id="sim-presumido-monthly" class="text-sm font-bold text-slate-200 block font-mono">R$ 0 /mês</span>
+                  <span class="text-[10px] font-mono text-slate-400">~14.5% do bruto</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Split Payment Banner -->
+          <div class="p-4 rounded-sm bg-slate-900 border border-slate-800 flex items-start gap-3">
+            <i data-lucide="alert-triangle" class="w-5 h-5 text-[#c4a46c] shrink-0 mt-0.5"></i>
+            <div class="text-xs text-slate-300">
+              <span class="font-bold text-white block mb-0.5">Efeito Split Payment (Retenção Automática)</span>
+              Ao receber um pagamento de <span id="sim-split-billing">R$ 18.000</span>, o sistema financeiro reterá automaticamente
+              <strong id="sim-split-tax" class="text-[#c4a46c]"> R$ 0</strong> na fonte.
+              Você receberá líquido <strong id="sim-split-net" class="text-emerald-400">R$ 0</strong> no caixa.
+            </div>
+          </div>
+
+          <!-- Savings Highlight & CTA -->
+          <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <span id="sim-savings-title" class="text-[11px] font-semibold text-[#c4a46c] uppercase tracking-wider block">
+                Economia Estimada na Migração
+              </span>
+              <span id="sim-yearly-savings" class="text-xl md:text-2xl font-serif font-bold text-white font-mono block mt-0.5">
+                R$ 0 /ano
+              </span>
+              <span id="sim-savings-sub" class="text-[10px] text-slate-400 block max-w-xs mt-0.5 leading-tight">
+                Sua economia anual ao sair do CPF e constituir uma Sociedade Unipessoal.
+              </span>
+            </div>
+
+            <button onclick="openModal('Simulador de Margem')" class="w-full sm:w-auto primary-btn py-3.5 px-6 rounded-sm text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shrink-0">
+              <span>Diagnóstico Personalizado</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-[#0a0c10]"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTHOR SECTION -->
+    <section id="sobre-o-autor" class="w-full glass-card rounded-2xl p-5 md:p-10 my-8 border border-slate-800 text-white relative overflow-hidden">
+      <div class="flex flex-col sm:flex-row gap-6 md:gap-10 items-start">
+        
+        <!-- Photo Column - Left -->
+        <div class="shrink-0 flex flex-col items-center sm:items-start mx-auto sm:mx-0">
+          <div class="relative">
+            <div class="w-36 h-44 sm:w-48 sm:h-56 md:w-56 md:h-64 rounded-sm overflow-hidden bg-slate-800 relative z-10 border border-slate-700 shadow-2xl">
+              <img src="foto.png" alt="Harnoel Lier" class="w-full h-full object-cover object-top filter contrast-105 grayscale hover:grayscale-0 transition-all duration-500" onError="if(this.src.indexOf('foto.png')!==-1){this.src='foto.jpg'}else{this.src='foto.png'}" />
+            </div>
+            <div class="absolute inset-0 border border-[#c4a46c] translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3 z-0 pointer-events-none"></div>
+            <div class="absolute -bottom-3 -right-2 bg-[#c4a46c] px-2 py-1.5 sm:p-2.5 rounded-sm z-20 shadow-xl flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-[#0a0c10]">
+              <i data-lucide="shield-check" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0a0c10]"></i>
+              <span>Sócio TRACT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio Column - Right -->
+        <div class="flex-1 space-y-4">
+          <div>
+            <span class="text-xs font-bold text-[#c4a46c] uppercase tracking-[0.25em] block mb-1">
+              Sobre o Autor
+            </span>
+            <h2 class="text-2xl md:text-3xl font-serif font-bold text-white" style="font-family: 'Georgia', serif;">
+              Harnoel Lier
+            </h2>
+            <span class="text-xs font-semibold text-slate-400 block mt-0.5">
+              Sócio-administrador da TRACT Contabilidade
+            </span>
+          </div>
+
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed font-light">
+            Contador e perito contábil com mais de 25 anos de estrada. Bacharel em Ciências Contábeis pela Fundação Visconde de Cairu, pós-graduado em Direito Tributário pela UFBA e especializado em Perícia Contábil. Conduziu a abertura de mais de 150 empresas nacionais e internacionais e consultou mais de 160 micro, pequenas e médias empresas.
+          </p>
+
+          <!-- Stats Bar -->
+          <div class="grid grid-cols-3 gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-slate-800">
+            <div class="text-center sm:text-left">
+              <span class="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#c4a46c] block">25+</span>
+              <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Anos de experiência</span>
+            </div>
+            <div class="text-center sm:text-left">
+              <span class="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#c4a46c] block">300+</span>
+              <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Empresas abertas</span>
+            </div>
+            <div class="text-center sm:text-left">
+              <span class="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#c4a46c] block">160+</span>
+              <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Empresas consultadas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800/80 pt-10 pb-16 text-xs text-slate-500 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-8">
+      <div>
+        <div class="flex items-center gap-2.5 mb-2">
+          <img src="marca.png" alt="TRACT Contabilidade" class="h-8 w-auto object-contain" onError="this.src='marca.png'" />
+          <span class="text-[#c4a46c] text-xs font-bold uppercase tracking-widest font-sans">Contabilidade</span>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+          Especialistas em inteligência tributária e contabilidade estratégica para sociedades de advogados.
+        </p>
+      </div>
+
+      <div>
+        <div class="text-white font-bold text-xs uppercase tracking-wider mb-3">Contatos & Atendimento</div>
+        <div class="space-y-2 text-slate-400">
+          <div>E-mail: <a href="mailto:recepcao@tract.com.br" class="text-slate-300 hover:text-white font-medium">recepcao@tract.com.br</a></div>
+          <div>Telefone: <span class="text-slate-300 font-medium">(71) 99985-3493</span></div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-start md:items-end justify-start">
+        <span class="text-xs font-bold text-white uppercase tracking-wider mb-3">Atendimento Rápido</span>
+        <a
+          href="https://wa.me/5571999853493?text=Ol%C3%A1%20Harnoel%2C%20acessei%20o%20Guia%20da%20Reforma%20Tribut%C3%A1ria%20pelo%20Instagram%20e%20gostaria%20de%20conversar."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-sm bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/20 font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-lg hover:border-emerald-400"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          <span>Falar no WhatsApp Direct</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px]">
+      <div>
+        Desenvolvido por Tract Contabilidade © 2026 · Todos os direitos reservados.
+      </div>
+      <div class="text-slate-600">
+        Especialistas em Inteligência Tributária para a Advocacia.
+      </div>
+    </div>
+  </footer>
+
+  <!-- DIAGNOSTIC MODAL -->
+  <div id="diagnostic-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div class="relative w-full max-w-lg bg-[#0d1117] border border-slate-800 rounded-2xl p-6 md:p-8 text-[#e2e8f0] shadow-2xl">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-lg cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-2">
+        <span class="p-2 rounded-sm bg-[#c4a46c]/15 text-[#c4a46c] border border-[#c4a46c]/30">
+          <i data-lucide="calendar" class="w-5 h-5 text-[#c4a46c]"></i>
+        </span>
+        <span class="text-xs font-bold text-[#c4a46c] uppercase tracking-widest">
+          Consulta Estratégica
+        </span>
+      </div>
+
+      <h2 class="text-xl md:text-2xl font-serif font-light text-white mb-2" style="font-family: 'Georgia', serif;">
+        Agendar Diagnóstico Tributário com a <span class="font-bold italic text-[#c4a46c]">TRACT</span>
+      </h2>
+      <p class="text-xs text-slate-300 mb-6">
+        Em 30 minutos, você sai com clareza sobre o seu regime ideal (SUA vs Simples Híbrido vs Presumido), simulação no seu faturamento real e o roteiro para 2027.
+      </p>
+
+      <div id="modal-success" class="hidden p-8 bg-[#c4a46c]/10 border border-[#c4a46c]/30 rounded-sm text-center">
+        <i data-lucide="check-circle-2" class="w-12 h-12 text-[#c4a46c] mx-auto mb-3"></i>
+        <h3 class="text-lg font-serif font-bold text-white" style="font-family: 'Georgia', serif;">Solicitação Aberta no WhatsApp!</h3>
+        <p class="text-xs text-slate-300 mt-1">Nossa equipe de especialistas tributários responderá em instantes.</p>
+      </div>
+
+      <form id="modal-form" onsubmit="handleModalSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+            Seu Nome Completo *
+          </label>
+          <input
+            id="input-name"
+            type="text"
+            required
+            placeholder="Dr(a). Nome e Sobrenome"
+            class="w-full bg-[#0a0c10] border border-slate-800 rounded-sm px-3 py-2.5 text-xs text-white focus:border-[#c4a46c] outline-none"
+          />
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+              Nome do Escritório
+            </label>
+            <input
+              id="input-office"
+              type="text"
+              placeholder="Nome da Banca / CPF"
+              class="w-full bg-[#0a0c10] border border-slate-800 rounded-sm px-3 py-2.5 text-xs text-white focus:border-[#c4a46c] outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+              Faixa de Faturamento
+            </label>
+            <select
+              id="input-revenue"
+              class="w-full bg-[#0a0c10] border border-slate-800 rounded-sm px-3 py-2.5 text-xs text-slate-200 outline-none"
+            >
+              <option value="Até R$ 10.000/mês">Até R$ 10.000 / mês</option>
+              <option value="R$ 10.000 a R$ 30.000/mês">R$ 10.000 a R$ 30.000 / mês</option>
+              <option value="R$ 30.000 a R$ 80.000/mês">R$ 30.000 a R$ 80.000 / mês</option>
+              <option value="Acima de R$ 80.000/mês">Acima de R$ 80.000 / mês</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+              WhatsApp / Celular *
+            </label>
+            <input
+              id="input-phone"
+              type="tel"
+              required
+              placeholder="(71) 99999-9999"
+              class="w-full bg-[#0a0c10] border border-slate-800 rounded-sm px-3 py-2.5 text-xs text-white focus:border-[#c4a46c] outline-none"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+              E-mail Comercial
+            </label>
+            <input
+              id="input-email"
+              type="email"
+              placeholder="contato@advocacia.com.br"
+              class="w-full bg-[#0a0c10] border border-slate-800 rounded-sm px-3 py-2.5 text-xs text-white focus:border-[#c4a46c] outline-none"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+            Assunto Principal
+          </label>
+          <select
+            id="input-topic"
+            class="w-full bg-[#0a0c10] border border-slate-800 rounded-sm px-3 py-2.5 text-xs text-slate-200 focus:border-[#c4a46c] outline-none"
+          >
+            <option value="Selecione o assunto">Selecione o assunto...</option>
+            <option value="Diagnóstico Tributário Completo">Diagnóstico Tributário Completo (Reforma 2026/2027)</option>
+            <option value="Migração de CPF para CNPJ (Sociedade Unipessoal - SUA)">Migração de CPF para CNPJ (Sociedade Unipessoal - SUA)</option>
+            <option value="Planejamento Tributário: Simples Híbrido vs Lucro Presumido">Planejamento Tributário: Simples Híbrido vs Lucro Presumido</option>
+            <option value="Aproveitamento de Crédito Fiscal do IVA para Clientes B2B">Aproveitamento de Crédito Fiscal do IVA para Clientes B2B</option>
+            <option value="Adequação de Contratos e Regras do Split Payment">Adequação de Contratos e Regras do Split Payment</option>
+            <option value="Simulador de Margem e Tributos">Simulador de Margem e Tributos</option>
+            <option value="Abertura e Regularização de Sociedade de Advogados">Abertura e Regularização de Sociedade de Advogados</option>
+            <option value="Outro Assunto / Consulta Geral">Outro Assunto / Consulta Geral</option>
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full primary-btn py-3.5 rounded-sm font-bold text-xs uppercase tracking-wider text-[#0a0c10] flex items-center justify-center gap-2 cursor-pointer mt-2"
+        >
+          <span>Confirmar Agendamento no WhatsApp</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-[#0a0c10]"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // DATA DECLARATION
+    const CHAPTERS = [
+      {
+        id: 1,
+        title: "Não é um puxadinho: é bola de demolição",
+        subtitle: "O fim dos 5 tributos e a chegada do IVA Dual (CBS + IBS)",
+        readTime: "3 min",
+        summary: "A EC 132/2023 acaba com a era dos 'puxadinhos' e extingue PIS, COFINS, ICMS, ISS e IPI. Entra o IVA Dual com tributação no destino.",
+        icon: "hammer"
+      },
+      {
+        id: 2,
+        title: "O cronograma: trocando o pneu com o carro andando",
+        subtitle: "Linha do tempo 2026–2033 e as datas-gatilho críticas",
+        readTime: "2 min",
+        summary: "A transição não é linear. De 03/08/2026 (campos obrigatórios de IBS/CBS na NF) a 2033, cada ano exige adequações imediatas.",
+        icon: "calendar"
+      },
+      {
+        id: 3,
+        title: "Advogado no CPF: a conta que não fecha",
+        subtitle: "Por que o CPF ganhou prazo de validade e a migração legal para SUA",
+        readTime: "3 min",
+        summary: "No CPF, a tributação pode devorar até 50% do faturamento. Em Julho/2026 e Jan/2027 o CNPJ se torna indispensável.",
+        icon: "user-x"
+      },
+      {
+        id: 4,
+        title: "Advogado no CNPJ: o perigo mora nos detalhes",
+        subtitle: "Regimes, créditos de folha e a armadilha da margem comprimida",
+        readTime: "3 min",
+        summary: "Mesmo com o desconto de 30% da OAB (alíquota ~18,55%), a folha de pagamento não gera créditos no IVA. A escolha do regime define sua margem.",
+        icon: "building-2"
+      },
+      {
+        id: 5,
+        title: "A tesoura do governo: Split Payment",
+        subtitle: "Como o caixa muda a partir de 2027 e a blindagem contratual",
+        readTime: "2 min",
+        summary: "O imposto não 'dorme' mais na sua conta. O Split Payment retém o IVA no instante da transação. Contratos sem repasse perderão margem.",
+        icon: "scissors"
+      },
+      {
+        id: 6,
+        title: "A armadilha silenciosa: honorários de sucumbência",
+        subtitle: "COSIT nº 59/2026 e COSIT nº 118/2026 e riscos na base de cálculo",
+        readTime: "2 min",
+        summary: "A Receita decided: sucumbência entra no Simples Nacional como receita da sociedade. Veja como segregar e documentar corretamente.",
+        icon: "shield-alert"
+      },
+      {
+        id: 7,
+        title: "Checklist de sobrevivência: o que fazer agora",
+        subtitle: "8 ações concretas com prazo implícito e custo de omissão real",
+        readTime: "2 min",
+        summary: "Mapeamento de despesas, revisão de notas fiscais, atualização de contratos e simulação de regime antes do final do 3º tri de 2026.",
+        icon: "check-square"
+      },
+      {
+        id: 8,
+        title: "O monstro se doma: o método TRACT para a advocacia",
+        subtitle: "Planejamento estratégico contábil, fiscal e contratual",
+        readTime: "2 min",
+        summary: "Como a TRACT entrega inteligência tributária contínua para advogados autônomos e sociedades de advocacia.",
+        icon: "award"
+      }
+    ];
+
+    let currentChapterId = 1;
+    let checklistState = { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false };
+    let simCurrentRegime = 'cpf';
+
+    // RENDER CHAPTER CARDS GRID
+    function renderChapterCards() {
+      const grid = document.getElementById('chapter-cards-grid');
+      grid.innerHTML = CHAPTERS.map(ch => {
+        const isActive = ch.id === currentChapterId;
+        return `
+          <div
+            onclick="selectChapter(${ch.id})"
+            class="p-5 rounded-2xl cursor-pointer transition-all ${
+              isActive 
+                ? 'bg-[#c4a46c]/15 border-2 border-[#c4a46c] text-white shadow-xl translate-y-[-2px]' 
+                : 'glass-card glass-card-hover border border-slate-800 text-slate-300'
+            }"
+          >
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono font-bold px-2 py-0.5 rounded ${
+                isActive ? 'bg-[#c4a46c] text-[#0a0c10]' : 'bg-slate-800 text-[#c4a46c]'
+              }">
+                Cap. 0${ch.id}
+              </span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-wider">${ch.readTime}</span>
+            </div>
+
+            <h3 class="font-bold text-sm mb-1.5 line-clamp-2 ${isActive ? 'text-[#c4a46c]' : 'text-white'}">
+              ${ch.title}
+            </h3>
+
+            <p class="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+              ${ch.summary}
+            </p>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // SELECT CHAPTER
+    function selectChapter(id) {
+      currentChapterId = id;
+      renderChapterCards();
+      renderChapterContent(id);
+      
+      // Scroll to viewer smoothly
+      const viewer = document.getElementById('capitulo-leitura');
+      if (viewer) {
+        viewer.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // RENDER CHAPTER CONTENT
+    function renderChapterContent(id) {
+      const ch = CHAPTERS.find(c => c.id === id);
+      const container = document.getElementById('chapter-content-area');
+
+      let bodyHTML = '';
+
+      if (id === 1) {
+        bodyHTML = `
+          <div class="space-y-8">
+            <p class="text-slate-200 leading-relaxed">
+              A Emenda Constitucional 132/2023 acabou com a era dos “puxadinhos” e do Frankenstein de impostos.
+              Serão extintos cinco tributos que você conhece de trás para frente — <strong>PIS, COFINS, ICMS, ISS e parte do IPI</strong> — e entra um <strong>IVA Dual</strong>: a <strong>CBS</strong> (federal) e o <strong>IBS</strong> (estadual/municipal), além do <strong>IS</strong>, o "imposto do pecado".
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="p-4 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-xl font-serif font-bold text-[#c4a46c] block mb-1">01</span>
+                <h3 class="font-bold text-white mb-1 text-sm">Fim dos Puxadinhos</h3>
+                <p class="text-slate-400 text-xs">Ruptura sistêmica, não maquiagem. O sistema tributário brasileiro foi demolido e reconstruído do zero.</p>
+              </div>
+              <div class="p-4 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-xl font-serif font-bold text-[#c4a46c] block mb-1">02</span>
+                <h3 class="font-bold text-white mb-1 text-sm">Tributação no Destino</h3>
+                <p class="text-slate-400 text-xs">O imposto segue o seu cliente, não a sua sede. O endereço do escritório deixa de ser vantagem fiscal ("fim do CEP esperto").</p>
+              </div>
+              <div class="p-4 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-xl font-serif font-bold text-[#c4a46c] block mb-1">03</span>
+                <h3 class="font-bold text-white mb-1 text-sm">Fim da Guerra Fiscal</h3>
+                <p class="text-slate-400 text-xs">Nenhum benefício unilateral de governador ou prefeito sobrevive. O campo de jogo foi nivelado.</p>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <h3 class="text-lg font-serif font-bold text-white mb-4" style="font-family: 'Georgia', serif;">
+                A Nova Sopa de Letrinhas, Sem Contabilês
+              </h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr class="border-b border-slate-800 text-slate-400 font-bold uppercase tracking-wider">
+                      <th class="py-3 px-3">Sai de cena</th>
+                      <th class="py-3 px-3">Entra no lugar</th>
+                      <th class="py-3 px-3">Alíquota estimada</th>
+                      <th class="py-3 px-3">Esfera</th>
+                      <th class="py-3 px-3">Gera crédito?</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-800 text-slate-200">
+                    <tr class="hover:bg-slate-900/50 transition-colors">
+                      <td class="py-3 px-3 font-semibold text-slate-300">PIS + COFINS</td>
+                      <td class="py-3 px-3 font-bold text-[#c4a46c]">CBS</td>
+                      <td class="py-3 px-3 font-mono text-[#c4a46c]">~8,08%</td>
+                      <td class="py-3 px-3">Federal</td>
+                      <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#c4a46c]/20 text-[#c4a46c] border border-[#c4a46c]/40">Sim, amplo</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-900/50 transition-colors">
+                      <td class="py-3 px-3 font-semibold text-slate-300">ICMS + ISS</td>
+                      <td class="py-3 px-3 font-bold text-[#c4a46c]">IBS</td>
+                      <td class="py-3 px-3 font-mono text-[#c4a46c]">~18,5%</td>
+                      <td class="py-3 px-3">Estadual / Municipal</td>
+                      <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#c4a46c]/20 text-[#c4a46c] border border-[#c4a46c]/40">Sim, amplo</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-900/50 transition-colors">
+                      <td class="py-3 px-3 font-semibold text-slate-300">—</td>
+                      <td class="py-3 px-3 font-bold text-[#c4a46c]">IS (Imposto Seletivo)</td>
+                      <td class="py-3 px-3 font-mono text-[#c4a46c]">Variável</td>
+                      <td class="py-3 px-3">Federal</td>
+                      <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400">Não</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-900/50 transition-colors">
+                      <td class="py-3 px-3 font-semibold text-slate-300">Soma Antiga</td>
+                      <td class="py-3 px-3 font-bold text-[#c4a46c]">IVA Dual Combinado</td>
+                      <td class="py-3 px-3 font-mono text-[#c4a46c]">~26,5%</td>
+                      <td class="py-3 px-3">Unificado</td>
+                      <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-800 text-slate-400">Não cumulativo</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- OAB 30% Discount Box -->
+            <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-4">
+              <h3 class="text-base font-serif font-bold text-white mb-1" style="font-family: 'Georgia', serif;">
+                A Boa Notícia: A Advocacia Não Paga a Tarifa Cheia
+              </h3>
+              <p class="text-xs text-slate-400">
+                A Lei Complementar 214/2025 garantiu <strong>redução de 30% na alíquota do IVA Dual</strong> para profissões regulamentadas por conselho — conquista articulada pela OAB.
+              </p>
+
+              <div class="space-y-3 pt-2">
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-slate-400 mb-1">
+                    <span>Padrão Geral IVA</span>
+                    <span>26,5%</span>
+                  </div>
+                  <div class="w-full bg-slate-800 h-4 rounded-full overflow-hidden">
+                    <div class="bg-slate-500 h-full w-[100%]"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-[#c4a46c] mb-1">
+                    <span>Advocacia (Desconto OAB -30%)</span>
+                    <span>18,55%</span>
+                  </div>
+                  <div class="w-full bg-slate-800 h-4 rounded-full overflow-hidden">
+                    <div class="bg-[#c4a46c] h-full w-[70%]"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-slate-900 border border-[#c4a46c]/30 rounded-sm text-xs text-slate-200">
+                🎉 <strong>Vitória da OAB na LC 214/2025:</strong> A advocacia paga alíquota 30% menor que o padrão geral do IVA Dual — caindo de ~26,5% para <strong>~18,55%</strong>.
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (id === 2) {
+        bodyHTML = `
+          <div class="space-y-8">
+            <p class="text-slate-200 leading-relaxed">
+              A transição 2026–2033 não é linear. Há datas-gatilho que exigem ação imediata — e quem esperar vai pagar a conta dos que se prepararam.
+            </p>
+
+            <div class="space-y-4 relative before:absolute before:inset-0 before:left-4 before:w-0.5 before:bg-slate-800 pl-8">
+              <div class="relative p-5 rounded-sm border bg-slate-900/80 border-slate-800">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full border-2 bg-[#c4a46c] border-slate-900"></div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-sm bg-slate-800 text-[#c4a46c]">2026</span>
+                  <span class="text-[10px] uppercase font-mono text-slate-400">Em andamento</span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-1">Ano de Testes e Ajustes</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">Alíquotas de teste (CBS 0,9% + IBS 0,1%), 100% compensáveis sem aumento de carga. Sistemas, NF-e e Split Payment começam a rodar.</p>
+              </div>
+
+              <div class="relative p-5 rounded-sm border bg-[#c4a46c]/10 border-[#c4a46c]/50 shadow-xl">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full border-2 bg-[#c4a46c] border-white animate-ping"></div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-sm bg-[#c4a46c] text-[#0a0c10]">03/08/2026</span>
+                  <span class="text-[10px] uppercase font-mono text-slate-400">Prazo Fatal</span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-1">Data Crítica na Receita Federal</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">Notas Fiscais de Serviços sem os novos campos de IBS e CBS serão REJEITADAS pelo sistema da Receita Federal. Se o sistema não estiver pronto, o escritório não fatura.</p>
+              </div>
+
+              <div class="relative p-5 rounded-sm border bg-slate-900/80 border-slate-800">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full border-2 bg-[#c4a46c] border-slate-900"></div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-sm bg-slate-800 text-[#c4a46c]">2027</span>
+                  <span class="text-[10px] uppercase font-mono text-slate-400">Fase 2</span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-1">O Big Bang Federal</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">Extinção do PIS e COFINS. Entrada da CBS cheia (~8,08%) e cobrança do IS. O Split Payment ganha força total nas transações B2B.</p>
+              </div>
+
+              <div class="relative p-5 rounded-sm border bg-slate-900/80 border-slate-800">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full border-2 bg-[#c4a46c] border-slate-900"></div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-sm bg-slate-800 text-[#c4a46c]">2029–2032</span>
+                  <span class="text-[10px] uppercase font-mono text-slate-400">Transição</span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-1">Convivência Dupla</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">IBS entra gradualmente substituindo ~10% ao ano de ICMS e ISS. Os escritórios convivem com dois sistemas simultâneos.</p>
+              </div>
+
+              <div class="relative p-5 rounded-sm border bg-slate-900/80 border-slate-800">
+                <div class="absolute -left-[41px] top-5 w-5 h-5 rounded-full border-2 bg-[#c4a46c] border-slate-900"></div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-xs font-bold px-2.5 py-0.5 rounded-sm bg-slate-800 text-[#c4a46c]">2033</span>
+                  <span class="text-[10px] uppercase font-mono text-slate-400">Operação Plena</span>
+                </div>
+                <h3 class="text-base font-bold text-white mb-1">Sistema Pleno sem Exceções</h3>
+                <p class="text-xs text-slate-300 leading-relaxed">Fim definitivo do sistema antigo. O novo sistema tributário unificado opera em sua totalidade.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-sm bg-slate-900 border border-slate-800 text-xs text-slate-200">
+              📌 <strong>Lembrete importante (Resolução CGSN nº 186/2026):</strong> A decisão do regime tributário de 2027 vence no final do 3º trimestre de 2026. Ou seja: a escolha é agora.
+            </div>
+          </div>
+        `;
+      } else if (id === 3) {
+        bodyHTML = `
+          <div class="space-y-8">
+            <p class="text-slate-200 leading-relaxed">
+              Hoje, o autônomo empilha IRPF de até 27,5%, INSS de 20% como contribuinte individual e ISS municipal. Com a Reforma, o IVA de ~18,55% entra sobre o honorário bruto — sem crédito de folha para compensar.
+            </p>
+
+            <div class="p-5 rounded-sm bg-[#c4a46c]/10 border border-[#c4a46c]/30">
+              <h3 class="font-serif font-bold text-[#c4a46c] text-lg mb-3" style="font-family: 'Georgia', serif;">
+                CNPJ Técnico: O CPF Ganhou Prazo de Validade
+              </h3>
+              <ul class="space-y-3 text-xs text-slate-200">
+                <li class="flex items-start gap-2">
+                  <span class="font-bold text-[#c4a46c]">📅 Julho de 2026:</span>
+                  <span>A Receita Federal exige CNPJ para qualquer autônomo emitir NFS-e com faturamento acima de R$ 40.500/ano (~R$ 3.375/mês).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="font-bold text-[#c4a46c]">📅 Janeiro de 2027:</span>
+                  <span>O CNPJ passa a ser exigido para fins de retenção do IBS sem exceções.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        `;
+      } else if (id === 4) {
+        bodyHTML = `
+          <div class="space-y-8">
+            <p class="text-slate-200 leading-relaxed">
+              O seu escritório paga ~18,55% em vez de 26,5%. Ótimo, certo? Pela metade. A escolha errada de regime compromete de <strong>8 a 12 pontos percentuais de margem</strong> ano após ano.
+            </p>
+
+            <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 space-y-4">
+              <h3 class="text-base font-serif font-bold text-white mb-2" style="font-family: 'Georgia', serif;">
+                Margem Operacional Estimada por Regime Tributário
+              </h3>
+              <div class="space-y-3">
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-[#c4a46c] mb-1">
+                    <span>Simples Nacional (SUA)</span>
+                    <span>72% Margem Líquida</span>
+                  </div>
+                  <div class="w-full bg-slate-800 h-3.5 rounded-full overflow-hidden">
+                    <div class="bg-[#c4a46c] h-full w-[72%]"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-blue-400 mb-1">
+                    <span>Lucro Presumido (Otimizado)</span>
+                    <span>68% Margem Líquida</span>
+                  </div>
+                  <div class="w-full bg-slate-800 h-3.5 rounded-full overflow-hidden">
+                    <div class="bg-blue-500 h-full w-[68%]"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-amber-400 mb-1">
+                    <span>Lucro Presumido (Sem Planejamento)</span>
+                    <span>60% Margem Líquida</span>
+                  </div>
+                  <div class="w-full bg-slate-800 h-3.5 rounded-full overflow-hidden">
+                    <div class="bg-amber-500 h-full w-[60%]"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-bold text-red-400 mb-1">
+                    <span>CPF / Autônomo</span>
+                    <span>52% Margem Líquida</span>
+                  </div>
+                  <div class="w-full bg-slate-800 h-3.5 rounded-full overflow-hidden">
+                    <div class="bg-red-500 h-full w-[52%]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (id === 5) {
+        bodyHTML = `
+          <div class="space-y-8">
+            <p class="text-slate-200 leading-relaxed">
+              O governo cansou de esperar você receber no dia 10 e pagar a guia no dia 20. Agora, no momento do pagamento (cartão, PIX, transferência), o sistema corta o IBS e a CBS e manda direto para o cofre público.
+            </p>
+
+            <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col items-center">
+              <h3 class="text-base font-serif font-bold text-white mb-6" style="font-family: 'Georgia', serif;">
+                Anatomia do Split Payment em um Honorário de R$ 10.000
+              </h3>
+
+              <div class="w-full max-w-lg space-y-2 text-xs">
+                <div class="w-full bg-[#c4a46c] text-[#0a0c10] p-3 rounded-sm flex justify-between font-bold">
+                  <span>Pagamento Bruto do Cliente</span>
+                  <span>R$ 10.000</span>
+                </div>
+                <div class="w-[85%] mx-auto bg-amber-600 text-white p-2.5 rounded-sm flex justify-between font-bold">
+                  <span>Retenção Automática Split Payment (~18,55%)</span>
+                  <span>- R$ 1.855</span>
+                </div>
+                <div class="w-[70%] mx-auto bg-emerald-600 text-white p-2.5 rounded-sm flex justify-between font-bold">
+                  <span>Caixa Líquido Recebido no Banco</span>
+                  <span>R$ 8.145</span>
+                </div>
+              </div>
+
+              <p class="text-xs text-slate-400 mt-4 text-center">
+                Aquele float de 20 dias que ajudava o capital de giro acabou. O seu fluxo de caixa precisa ser recalibrado agora.
+              </p>
+            </div>
+          </div>
+        `;
+      } else if (id === 6) {
+        bodyHTML = `
+          <div class="space-y-6">
+            <p class="text-slate-200 leading-relaxed">
+              A Solução de Consulta <strong>COSIT nº 59/2026</strong> cravou: honorários de sucumbência recebidos pela sociedade integram a receita bruta no Simples Nacional. Sem exclusão da base de cálculo.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="p-5 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-xs font-bold text-[#c4a46c] uppercase tracking-wider block mb-1">COSIT nº 59/2026</span>
+                <h4 class="font-bold text-white mb-2 text-sm">A Regra Geral da Sucumbência</h4>
+                <p class="text-xs text-slate-300">Honorários de sucumbência recebidos pela sociedade integram a receita bruta no Simples. A banca tributa 100% da sucumbência que recebe.</p>
+              </div>
+
+              <div class="p-5 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-xs font-bold text-[#c4a46c] uppercase tracking-wider block mb-1">COSIT nº 118/2026</span>
+                <h4 class="font-bold text-white mb-2 text-sm">A Nuance dos Advogados Associados</h4>
+                <p class="text-xs text-slate-300">Reconhece como receita própria da sociedade apenas a parcela que lhe cabe na partilha com associados. Exige contrato registrado e regramento formal.</p>
+              </div>
+            </div>
+          </div>
+        `;
+      } else if (id === 7) {
+        const completedCount = Object.values(checklistState).filter(Boolean).length;
+        const percent = Math.round((completedCount / 8) * 100);
+
+        bodyHTML = `
+          <div class="space-y-8">
+            <p class="text-slate-200 leading-relaxed">
+              Diante de prazos fatais e retenções automáticas no caixa, compilamos as <strong>8 ações práticas e urgentes</strong> que definem se o seu escritório continuará lucrativo no novo cenário fiscal.
+            </p>
+
+            <div class="p-4 rounded-sm bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <span class="text-xs text-slate-400 block font-semibold">Progresso da Adequação do Escritório</span>
+                <span class="text-xl font-bold font-mono text-[#c4a46c]">${completedCount} de 8 Ações Concluídas (${percent}%)</span>
+              </div>
+              <div class="w-full sm:w-48 bg-slate-800 h-3 rounded-full overflow-hidden">
+                <div class="bg-[#c4a46c] h-full transition-all duration-300" style="width: ${percent}%;"></div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              ${[
+                { id: 1, title: "1. Adaptar Sistema de Emissão de NF-e / NFS-e", desc: "A partir de 03/08/2026, os novos campos de IBS e CBS serão OBRIGATÓRIOS. Sem eles, a nota fiscal é rejeitada.", deadline: "Até 03/08/2026" },
+                { id: 2, title: "2. Migrar de CPF para SUA (Sociedade Unipessoal)", desc: "No CPF, a tributação atinge até 50%. A migração para SUA no Simples reduz a alíquota inicial para 4,5%.", deadline: "Imediato" },
+                { id: 3, title: "3. Simular Regimes Tributários de 2027", desc: "Simular Simples DAS vs Simples Híbrido vs Lucro Presumido até o final do 3º tri de 2026 (Resolução CGSN 186/2026).", deadline: "Até 3º Tri 2026" },
+                { id: 4, title: "4. Inserir Cláusula de Repasse de Impostos nos Contratos", desc: "Blindar a margem inserindo cláusula automática de repasse do IVA e Split Payment nos contratos novos e aditivos.", deadline: "Imediato" },
+                { id: 5, title: "5. Mapear Despesas Elegíveis a Crédito do IVA", desc: "Classificar aluguel, energia, licenças de software jurídicos e serviços PJ que geram crédito pleno de CBS/IBS.", deadline: "Em andamento" },
+                { id: 6, title: "6. Ajustar Planejamento de Fluxo de Caixa para Split Payment", desc: "A retenção é automática no instante do pagamento. Fim do float de 20 dias para o DARF.", deadline: "Imediato" },
+                { id: 7, title: "7. Formalizar Contratos com Advogados Associados", desc: "Segregar receitas e sucumbência para evitar bitributação no Simples Nacional conforme a COSIT 118/2026.", deadline: "Imediato" },
+                { id: 8, title: "8. Agendar Diagnóstico com Especialista Tributário", desc: "Planilhas genéricas falham. Faça o planejamento personalizado com a equipe especializada da TRACT.", deadline: "Hoje" }
+              ].map(item => `
+                <div
+                  onclick="toggleChecklist(${item.id})"
+                  class="p-4 rounded-sm border transition-all cursor-pointer flex items-start gap-3 ${
+                    checklistState[item.id]
+                      ? 'bg-[#c4a46c]/10 border-[#c4a46c]/50 text-slate-300'
+                      : 'bg-slate-900/80 border-slate-800 hover:border-[#c4a46c]/50 text-white'
+                  }"
+                >
+                  <div class="mt-0.5 text-[#c4a46c]">
+                    <i data-lucide="${checklistState[item.id] ? 'check-circle-2' : 'square'}" class="w-5 h-5 text-[#c4a46c]"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex justify-between items-center mb-1">
+                      <h3 class="text-xs font-bold ${checklistState[item.id] ? 'line-through text-slate-500' : 'text-white'}">
+                        ${item.title}
+                      </h3>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded-sm bg-slate-800 text-[#c4a46c] border border-[#c4a46c]/30">
+                        ${item.deadline}
+                      </span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 leading-snug">${item.desc}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+
+            <div class="p-4 rounded-sm bg-[#c4a46c]/10 border border-[#c4a46c]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div class="text-xs text-slate-200">
+                <span class="font-bold text-white block mb-0.5">Precisa de apoio para executar esta transição?</span>
+                A equipe de contabilidade estratégica da TRACT cuida de todas as etapas operacionais e fiscais.
+              </div>
+              <button onclick="openModal('Checklist de Sobrevivência')" class="primary-btn py-3 px-6 rounded-sm text-xs font-bold uppercase tracking-wider text-[#0a0c10] whitespace-nowrap flex items-center gap-2 cursor-pointer">
+                <span>Executar com a TRACT</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 text-[#0a0c10]"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      } else if (id === 8) {
+        bodyHTML = `
+          <div class="space-y-8">
+            <p class="text-slate-200 leading-relaxed">
+              A Reforma Tributária não precisa ser um pesadelo. Com metodologia técnica, visão preventiva e suporte especializado, transformamos a burocracia e as novas regras em <strong>vantagem competitiva e proteção patrimonial</strong> para a sua advocacia.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-5 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-2xl font-serif font-bold text-[#c4a46c] block mb-1">Etapa 01</span>
+                <h3 class="font-bold text-white text-sm mb-1.5 flex items-center gap-2">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-[#c4a46c]"></i> Diagnóstico & Matriz de Enquadramento
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Análise minuciosa dos últimos 12 meses de faturamento, folha, pró-labore e perfil de clientes (B2B vs B2C) para determinar o regime de menor custo fiscal.</p>
+              </div>
+
+              <div class="p-5 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-2xl font-serif font-bold text-[#c4a46c] block mb-1">Etapa 02</span>
+                <h3 class="font-bold text-white text-sm mb-1.5 flex items-center gap-2">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-[#c4a46c]"></i> Blindagem Contratual e Societária
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Adequação da estrutura jurídica (CNPJ/SUA), inclusão de cláusulas de repasse de tributos e reestruturação das regras de rateio de sucumbência conforme COSIT nº 118/2026.</p>
+              </div>
+
+              <div class="p-5 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-2xl font-serif font-bold text-[#c4a46c] block mb-1">Etapa 03</span>
+                <h3 class="font-bold text-white text-sm mb-1.5 flex items-center gap-2">
+                  <i data-lucide="zap" class="w-4 h-4 text-[#c4a46c]"></i> Parametrização Fiscal & BPO Financeiro
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Configuração dos novos campos de IBS/CBS nos emissores de NFS-e (prazo de 03/08/2026) e gestão inteligente do fluxo de caixa com previdência para o Split Payment.</p>
+              </div>
+
+              <div class="p-5 rounded-sm bg-slate-900/80 border border-slate-800">
+                <span class="text-2xl font-serif font-bold text-[#c4a46c] block mb-1">Etapa 04</span>
+                <h3 class="font-bold text-white text-sm mb-1.5 flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-[#c4a46c]"></i> Governança Tributária Contínua
+                </h3>
+                <p class="text-xs text-slate-400 leading-relaxed">Acompanhamento mensal permanente das alíquotas do IVA Dual, créditos tomados e saúde financeira com atendimento direto por sócios contadores experientes.</p>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-sm bg-slate-900 border border-slate-800 text-center space-y-4">
+              <h3 class="text-lg font-serif font-light text-white" style="font-family: 'Georgia', serif;">
+                Pronto para colocar o <span class="font-bold italic text-[#c4a46c]">Método TRACT</span> em prática no seu escritório?
+              </h3>
+              <p class="text-xs text-slate-300 max-w-xl mx-auto">
+                Sua primeira consulta técnica é sem compromisso. Agende 30 minutos com nossos especialistas.
+              </p>
+              <button onclick="openModal('Método TRACT')" class="primary-btn py-3.5 px-8 rounded-sm text-xs font-bold uppercase tracking-wider text-[#0a0c10] shadow-2xl inline-flex items-center gap-2 cursor-pointer">
+                <i data-lucide="calendar" class="w-4 h-4 text-[#0a0c10]"></i>
+                <span>Agendar Diagnóstico</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      container.innerHTML = `
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-8 h-8 rounded-sm bg-[#c4a46c]/20 border border-[#c4a46c]/40 text-[#c4a46c] flex items-center justify-center font-bold text-xs font-mono">
+            0${ch.id}
+          </span>
+          <span class="text-xs font-bold text-[#c4a46c] uppercase tracking-widest">
+            Capítulo ${ch.id} de 8 · ${ch.readTime} de leitura
+          </span>
+        </div>
+
+        <h2 class="text-2xl md:text-4xl font-serif font-bold text-white mb-2 leading-tight" style="font-family: 'Georgia', serif;">
+          ${ch.title}
+        </h2>
+        <p class="text-slate-300 text-base md:text-lg font-light mb-8 pb-6 border-b border-slate-800">
+          ${ch.subtitle}
+        </p>
+
+        ${bodyHTML}
+
+        <!-- CHAPTER NAVIGATION FOOTER -->
+        <div class="pt-8 mt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+          ${id > 1 ? `
+            <button onclick="selectChapter(${id - 1})" class="w-full sm:w-auto glass-btn py-3 px-5 rounded-sm text-xs font-bold text-slate-300 hover:text-white flex items-center justify-center gap-2 cursor-pointer">
+              <i data-lucide="chevron-left" class="w-4 h-4 text-[#c4a46c]"></i>
+              <span>Capítulo ${id - 1}</span>
+            </button>
+          ` : '<div class="hidden sm:block"></div>'}
+
+          <button onclick="openModal('Capítulo ${id}: ${ch.title}')" class="w-full sm:w-auto primary-btn py-3 px-6 rounded-sm text-xs font-bold uppercase tracking-wider text-[#0a0c10] flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+            <span>Agendar Diagnóstico</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#0a0c10]"></i>
+          </button>
+
+          ${id < 8 ? `
+            <button onclick="selectChapter(${id + 1})" class="w-full sm:w-auto glass-btn py-3 px-5 rounded-sm text-xs font-bold text-slate-300 hover:text-white flex items-center justify-center gap-2 cursor-pointer">
+              <span>Capítulo ${id + 1}</span>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-[#c4a46c]"></i>
+            </button>
+          ` : '<div class="hidden sm:block"></div>'}
+        </div>
+      `;
+
+      // Refresh Lucide icons inside dynamic content
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // TOGGLE CHECKLIST ITEM
+    function toggleChecklist(itemId) {
+      checklistState[itemId] = !checklistState[itemId];
+      renderChapterContent(7);
+
+      const completedCount = Object.values(checklistState).filter(Boolean).length;
+      if (completedCount === 8 && window.confetti) {
+        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+      }
+    }
+
+    // SIMULATOR CALCULATIONS
+    function setRegime(regime) {
+      simCurrentRegime = regime;
+
+      const regimesMap = [
+        { key: 'cpf', id: 'btn-regime-cpf' },
+        { key: 'sua_simples', id: 'btn-regime-sua' },
+        { key: 'sua_hibrido', id: 'btn-regime-sua-hibrido' },
+        { key: 'presumido', id: 'btn-regime-presumido' }
+      ];
+
+      regimesMap.forEach(r => {
+        const btn = document.getElementById(r.id);
+        if (btn) {
+          if (r.key === regime) {
+            btn.className = "py-2 px-2 text-[11px] font-semibold rounded-sm border transition-all cursor-pointer bg-[#c4a46c] border-[#c4a46c] text-[#0a0c10] font-bold shadow-lg";
+          } else {
+            btn.className = "py-2 px-2 text-[11px] font-semibold rounded-sm border transition-all cursor-pointer bg-slate-900 border-slate-800 text-slate-400 hover:text-slate-200";
+          }
+        }
+      });
+
+      updateSimulator();
+    }
+
+    function updateSimulator() {
+      const billing = Number(document.getElementById('sim-billing-input').value);
+      const b2b = Number(document.getElementById('sim-b2b-input').value);
+
+      const billingLabel = document.getElementById('sim-billing-label');
+      const b2bLabel = document.getElementById('sim-b2b-label');
+      if (billingLabel) billingLabel.innerText = `R$ ${billing.toLocaleString('pt-BR')}`;
+      if (b2bLabel) b2bLabel.innerText = `${b2b}% B2B`;
+
+      const yearlyBilling = billing * 12;
+
+      // 1. CPF Scenario
+      let cpfIRPF = billing * 0.225;
+      if (billing > 15000) cpfIRPF = billing * 0.275 - 896;
+      const cpfINSS = Math.min(billing * 0.20, 1507);
+      const cpfIVA = billing * 0.1855;
+      const cpfTotalTaxMonthly = cpfIRPF + cpfINSS + cpfIVA;
+      const cpfEffectiveRate = (cpfTotalTaxMonthly / billing) * 100;
+
+      // 2. SUA Simples Padrão
+      let suaRate = 4.5;
+      if (yearlyBilling > 180000) suaRate = 6.5;
+      if (yearlyBilling > 360000) suaRate = 7.8;
+      if (yearlyBilling > 720000) suaRate = 10.2;
+      if (yearlyBilling > 1800000) suaRate = 12.5;
+      const suaTaxMonthly = billing * (suaRate / 100);
+
+      // 3. SUA Simples Híbrido (18,55% CBS/IBS + 2,5% IRPJ/CSLL)
+      const suaHibridoRate = 18.55 + 2.5;
+      const suaHibridoTaxMonthly = billing * (suaHibridoRate / 100);
+
+      // 4. Lucro Presumido
+      const presumidoTaxMonthly = billing * 0.145;
+
+      // Current Tax based on selection
+      let currentMonthlyTax = cpfTotalTaxMonthly;
+      let savingsLabel = 'Economia Estimada na Migração';
+      let savingsSublabel = 'Sua economia anual ao sair do CPF e constituir uma Sociedade Unipessoal.';
+
+      if (simCurrentRegime === 'cpf') {
+        currentMonthlyTax = cpfTotalTaxMonthly;
+        savingsLabel = 'Economia Estimada na Migração (CPF → SUA)';
+        savingsSublabel = 'Redução na carga tributária ao migrar para a Sociedade Unipessoal no Simples Padrão.';
+      } else if (simCurrentRegime === 'sua_simples') {
+        currentMonthlyTax = suaTaxMonthly;
+        savingsLabel = 'Economia Atualizada no Simples Padrão vs CPF';
+        savingsSublabel = 'Você já está no regime de menor imposto direto! Esta é a economia anual em relação ao CPF.';
+      } else if (simCurrentRegime === 'sua_hibrido') {
+        currentMonthlyTax = suaHibridoTaxMonthly;
+        savingsLabel = 'Comparativo do Simples Híbrido vs CPF';
+        savingsSublabel = 'Economia em relação ao CPF garantindo crédito fiscal integral de 18,55% para seus clientes B2B.';
+      } else if (simCurrentRegime === 'presumido') {
+        currentMonthlyTax = presumidoTaxMonthly;
+        savingsLabel = 'Diferença de Carga (Presumido vs. SUA Simples)';
+        savingsSublabel = 'Economia em tributos diretos ao optar pelo Simples Padrão em vez do Lucro Presumido.';
+      }
+
+      const targetMonthlyTax = suaTaxMonthly;
+      const monthlySavings = Math.max(0, currentMonthlyTax - targetMonthlyTax);
+      const yearlySavings = monthlySavings * 12;
+
+      const splitPaymentMonthly = billing * 0.1855;
+      const netReceivedMonthly = billing - splitPaymentMonthly;
+
+      // B2B Credit Analysis based on selected Regime
+      const b2bBilling = billing * (b2b / 100);
+      const b2bCreditPresumido = b2bBilling * 0.1855;
+      const b2bCreditSimples = b2bBilling * 0.021;
+
+      let activeB2bCredit = b2bCreditPresumido;
+      let b2bTipText = '';
+
+      if (simCurrentRegime === 'cpf') {
+        activeB2bCredit = 0;
+        b2bTipText = b2b > 0
+          ? `⚠️ No CPF, você gera R$ 0 de crédito fiscal para empresas. Migrando para o CNPJ (SUA Híbrido ou Presumido), seus clientes PJ abateriam até R$ ${Math.round(b2bCreditPresumido).toLocaleString('pt-BR')}/mês do IVA.`
+          : `💡 No CPF não há geração de crédito fiscal para empresas B2B.`;
+      } else if (simCurrentRegime === 'sua_simples') {
+        activeB2bCredit = b2bCreditSimples;
+        b2bTipText = b2b > 0
+          ? `💡 No Simples Padrão (DAS), seus clientes PJ abatem R$ ${Math.round(b2bCreditSimples).toLocaleString('pt-BR')}/mês de crédito. Para oferecer crédito cheio de R$ ${Math.round(b2bCreditPresumido).toLocaleString('pt-BR')}/mês, a opção é o Simples Híbrido.`
+          : `💡 Foco em clientes Pessoa Física (${100 - b2b}% B2C). O Simples Padrão (DAS) é o regime mais vantajoso e direto.`;
+      } else if (simCurrentRegime === 'sua_hibrido') {
+        activeB2bCredit = b2bCreditPresumido;
+        b2bTipText = b2b > 0
+          ? `✨ Excelente para B2B! No Simples Híbrido, seus clientes PJ abatem crédito CHEIO de R$ ${Math.round(b2bCreditPresumido).toLocaleString('pt-BR')}/mês (18,55%), igualando sua competitividade ao Lucro Presumido.`
+          : `💡 No Simples Híbrido com foco em B2C, a carga direta é maior (~21%). Recomendado para escritórios com alta demanda B2B.`;
+      } else {
+        activeB2bCredit = b2bCreditPresumido;
+        b2bTipText = b2b > 0
+          ? `💡 No Lucro Presumido, seus clientes empresas abatem R$ ${Math.round(b2bCreditPresumido).toLocaleString('pt-BR')}/mês de crédito integral (18,55% do honorário B2B).`
+          : `💡 Com foco em B2C (${100 - b2b}%), o Lucro Presumido gera imposto direto maior sem vantagem de crédito B2B.`;
+      }
+
+      // Highlight active result card
+      const cardSuaPadrao = document.getElementById('card-sua-padrao');
+      const cardSuaHibrido = document.getElementById('card-sua-hibrido');
+      if (cardSuaPadrao) {
+        if (simCurrentRegime === 'sua_simples') {
+          cardSuaPadrao.className = "p-3 rounded-sm bg-[#c4a46c]/20 border border-[#c4a46c] ring-1 ring-[#c4a46c]/50 flex justify-between items-center relative overflow-hidden transition-all";
+        } else {
+          cardSuaPadrao.className = "p-3 rounded-sm bg-[#c4a46c]/10 border border-[#c4a46c]/40 flex justify-between items-center relative overflow-hidden transition-all";
+        }
+      }
+      if (cardSuaHibrido) {
+        if (simCurrentRegime === 'sua_hibrido') {
+          cardSuaHibrido.className = "p-3 rounded-sm bg-amber-950/40 border border-amber-500/60 ring-1 ring-amber-500/50 flex justify-between items-center transition-all";
+        } else {
+          cardSuaHibrido.className = "p-3 rounded-sm bg-slate-900 border border-slate-800 flex justify-between items-center transition-all";
+        }
+      }
+
+      // Update Values in DOM
+      const elemCpfM = document.getElementById('sim-cpf-monthly');
+      const elemCpfR = document.getElementById('sim-cpf-rate');
+      if (elemCpfM) elemCpfM.innerText = `R$ ${Math.round(cpfTotalTaxMonthly).toLocaleString('pt-BR')} /mês`;
+      if (elemCpfR) elemCpfR.innerText = `~${Math.round(cpfEffectiveRate)}% do bruto`;
+
+      const elemSuaM = document.getElementById('sim-sua-monthly');
+      const elemSuaR = document.getElementById('sim-sua-rate');
+      if (elemSuaM) elemSuaM.innerText = `R$ ${Math.round(suaTaxMonthly).toLocaleString('pt-BR')} /mês`;
+      if (elemSuaR) elemSuaR.innerText = `~${suaRate}% do bruto`;
+
+      const elemSuaHibM = document.getElementById('sim-sua-hibrido-monthly');
+      const elemSuaHibR = document.getElementById('sim-sua-hibrido-rate');
+      if (elemSuaHibM) elemSuaHibM.innerText = `R$ ${Math.round(suaHibridoTaxMonthly).toLocaleString('pt-BR')} /mês`;
+      if (elemSuaHibR) elemSuaHibR.innerText = `~${suaHibridoRate.toFixed(1)}% do bruto`;
+
+      const elemPresM = document.getElementById('sim-presumido-monthly');
+      if (elemPresM) elemPresM.innerText = `R$ ${Math.round(presumidoTaxMonthly).toLocaleString('pt-BR')} /mês`;
+
+      const elemSplitB = document.getElementById('sim-split-billing');
+      const elemSplitT = document.getElementById('sim-split-tax');
+      const elemSplitN = document.getElementById('sim-split-net');
+      if (elemSplitB) elemSplitB.innerText = `R$ ${billing.toLocaleString('pt-BR')}`;
+      if (elemSplitT) elemSplitT.innerText = ` R$ ${Math.round(splitPaymentMonthly).toLocaleString('pt-BR')}`;
+      if (elemSplitN) elemSplitN.innerText = `R$ ${Math.round(netReceivedMonthly).toLocaleString('pt-BR')}`;
+
+      const elemSavTitle = document.getElementById('sim-savings-title');
+      const elemSavSub = document.getElementById('sim-savings-sub');
+      const elemSavVal = document.getElementById('sim-yearly-savings');
+      if (elemSavTitle) elemSavTitle.innerText = savingsLabel;
+      if (elemSavSub) elemSavSub.innerText = savingsSublabel;
+      if (elemSavVal) elemSavVal.innerText = `R$ ${Math.round(yearlySavings).toLocaleString('pt-BR')} /ano`;
+
+      const elemB2bCredit = document.getElementById('sim-b2b-credit-val');
+      if (elemB2bCredit) elemB2bCredit.innerText = `R$ ${Math.round(activeB2bCredit).toLocaleString('pt-BR')}/mês`;
+
+      const tip = document.getElementById('sim-b2b-tip');
+      if (tip) {
+        tip.innerText = b2bTipText;
+      }
+    }
+
+    // MODAL HANDLERS
+    function openModal(topic) {
+      const modal = document.getElementById('diagnostic-modal');
+      const topicInput = document.getElementById('input-topic');
+      if (topicInput) {
+        if (topic) {
+          let found = Array.from(topicInput.options).some(opt => opt.value === topic);
+          if (!found) {
+            const newOpt = document.createElement('option');
+            newOpt.value = topic;
+            newOpt.innerText = topic;
+            topicInput.appendChild(newOpt);
+          }
+          topicInput.value = topic;
+        } else {
+          topicInput.value = 'Selecione o assunto';
+        }
+      }
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('diagnostic-modal');
+      const successBox = document.getElementById('modal-success');
+      const form = document.getElementById('modal-form');
+      if (modal) modal.classList.add('hidden');
+      if (successBox) successBox.classList.add('hidden');
+      if (form) form.classList.remove('hidden');
+    }
+
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('input-name').value;
+      const office = document.getElementById('input-office').value || 'Advogado Autônomo';
+      const revenue = document.getElementById('input-revenue').value;
+      const phone = document.getElementById('input-phone').value;
+      const email = document.getElementById('input-email').value;
+      const topic = document.getElementById('input-topic').value;
+
+      const text = `Olá TRACT Contabilidade, vim pelo Instagram e gostaria de agendar o Diagnóstico Tributário da Advocacia.\n\n*Dados do Solicitante:*\n• *Nome:* ${name}\n• *Escritório/Banca:* ${office}\n• *Faturamento Aprox.:* ${revenue}\n• *Telefone/WhatsApp:* ${phone}\n• *E-mail:* ${email}\n• *Tema principal:* ${topic}`;
+
+      window.open(`https://wa.me/5571985499959?text=${encodeURIComponent(text)}`, '_blank');
+
+      document.getElementById('modal-form').classList.add('hidden');
+      document.getElementById('modal-success').classList.remove('hidden');
+
+      setTimeout(() => {
+        closeModal();
+      }, 3500);
+    }
+
+    // INITIALIZATION ON PAGE LOAD
+    window.addEventListener('DOMContentLoaded', () => {
+      renderChapterCards();
+      renderChapterContent(1);
+      updateSimulator();
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
